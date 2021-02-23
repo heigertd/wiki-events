@@ -1,0 +1,10 @@
+.heat-map-year{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.heat-map-day{
+    height: 30px;
+    width: 100px;
+}
