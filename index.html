@@ -8,25 +8,37 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Title</h1>
-    <h3>What Happened Today</h3>
-    <div class = 'today'>
-        <p id = 'date0'></p>
-        <p id = 'year0'></p>
-        <p id = 'description0'></p>
+    <div class = 'header'>
+        <h1>Wiki Events API Search</h1>
     </div>
-    <form id= 'user-input'>
-        <label for="month">Month:</label>
-        <input type="text" id="month" name="month">
-        <label for="day">Day:</label>
-        <input type="text" id="day" name="day">
-        <input id = 'submit' type="submit"  value="Submit">
-    </form>
-    <h3>Search Results</h3>
-    <div id = 'search-results'>
-        <p id = 'date'></p>
-        <p id = 'year'></p>
-        <p id = 'description'></p>
+    <div class = 'what-happened-today'>
+        <h3>What Happened Today</h3>
+        <div class = 'today'>
+            <div class = 'today-date'>
+                <p id = 'date0'></p>
+                <p id = 'year0'></p>
+            </div>
+            <p id = 'description0'></p>
+        </div>
+    </div>
+    <div class = 'search-div'>
+        <div class = 'search-by-date'>
+            <h3>Search By Date</h3>
+            <form id= 'user-input'>
+                <!-- <label for="month">Month:</label> -->
+                <input type="text" id="month" name="month" placeholder = 'Month 1-12'>
+                <!-- <label for="day">Day:</label> -->
+                <input type="text" id="day" name="day" placeholder = 'Day 1-31'>
+                <input id = 'submit' type="submit"  value="Submit">
+            </form>
+        </div>
+        <div class = 'search-results-div'>
+            <h3 id = 'date'></h3>
+            <!-- <div id = 'search-results'>
+                <p id = 'year'></p>
+                <p id = 'description'></p>
+            </div> -->
+        </div>
     </div>
 
     <h3>Heat Map</h3>

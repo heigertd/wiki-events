@@ -3,14 +3,17 @@ function currentDay() {
     var month = new Date().getMonth();
     var day = new Date().getDate();
 
+    var randEntry = Math.floor(Math.random() * 10);
+
     var queryURL = "https://byabbe.se/on-this-day/" + month + "/" + day + "/events.json";
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (res) {
+        var randEntry = Math.floor(Math.random() * res.events.length);
         $("#date0").text(res.date);
-        $("#year0").text(res.events[0].year);
-        $("#description0").text(res.events[0].description);
+        $("#year0").text(res.events[randEntry].year);
+        $("#description0").text(res.events[randEntry].description);
     })
 
 }
@@ -34,10 +37,18 @@ $("#submit").on("click", function (event) {
 
 //Create row for search result
 var createRow = function (data) {
-
     $("#date").text(data.date);
-    $("#year").text(data.events[0].year);
-    $("#description").text(data.events[0].description);
+
+    for(i=0; i < data.events.length; i++){
+        var resultDiv = $('<div id = "search-results">');
+        var yearP = $('<p class = "year">').text(data.events[i].year)
+        var descriptionP = $('<p class = "description">').text(data.events[i].description)
+
+        resultDiv.append(yearP, descriptionP);
+
+        $('.search-results-div').append(resultDiv);
+    }
+
 };
 
 //Functions for getting all the dates and sorting them
@@ -99,7 +110,7 @@ function useData(value) {
 
     for (i = 0; i < value.length; i++) {
 
-        var dateDiv = $('<div class = "heat-map-day">').css('background-color', `rgb(${value[i].events.length * 3}, 0, 0)`);
+        var dateDiv = $('<div class = "heat-map-day">').css('background-color', `rgb(69, ${value[i].events.length * 3}, 69)`);
         var dateP = $('<p>').text(value[i].date)
 
         dateDiv.append(dateP);
