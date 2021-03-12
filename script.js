@@ -1,9 +1,10 @@
 //Current Day events
 function currentDay() {
-    var month = new Date().getMonth();
+    var month = new Date().getMonth() + 1;
     var day = new Date().getDate();
 
-    var randEntry = Math.floor(Math.random() * 10);
+
+    // var randEntry = Math.floor(Math.random() * 10);
 
     var queryURL = "https://byabbe.se/on-this-day/" + month + "/" + day + "/events.json";
     $.ajax({
@@ -123,5 +124,5 @@ function useData(value) {
 }
 
 currentDay();
-sortDates();
+// sortDates();
 
