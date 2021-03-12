@@ -124,5 +124,5 @@ function useData(value) {
 }
 
 currentDay();
-// sortDates();
+sortDates();
 
