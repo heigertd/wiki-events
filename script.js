@@ -55,8 +55,10 @@ var createRow = function (data) {
 //Functions for getting all the dates and sorting them
 async function sortDates() {
 
-    let allDates = await everyDay();
+    allDates = await everyDay();
 
+    // return allDates;
+    
     useData(allDates);
 }
 
@@ -120,9 +122,15 @@ function useData(value) {
 
     }
 
+    $('.lds-ring').css('display', 'none');
 
 }
 
 currentDay();
 sortDates();
+
+// while(allDatesPending === 'pending'){
+//     $('.lds-ring').css('border', '8px solid rgb(69, 184, 69)');
+// }
+
 
